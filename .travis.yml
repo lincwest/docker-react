@@ -1,4 +1,7 @@
 sudo: required
+
+language: ruby
+
 services:
     - docker
 
@@ -7,5 +10,3 @@ before_install:
 
 script:
     - docker run lincwest/docker-react npm run test -- --coverage
-
-language: generic
