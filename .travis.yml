@@ -1,12 +1,13 @@
 sudo: required
 
+language: node_js
+node_js:
+    - "stable"
+
 services:
     - docker
 
 before_install:
-    - echo "BEFORE INSTALL START"
-    - gem install bundler
-    - echo "BEFORE INSTALL END"
     - docker build -t lincwest/docker-react -f Dockerfile.dev .
 
 script:
