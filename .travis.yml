@@ -6,4 +6,4 @@ before_install:
     - docker build -t lincwest/docker-react -f Dockerfile.dev .
 
 script:
-    - docker run lincwest/docker-react npm run test -- --coverage
+    - docker run -e CI=true lincwest/docker-react npm run test -- --coverage
