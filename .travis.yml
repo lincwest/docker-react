@@ -2,6 +2,8 @@ sudo: required
 
 language: ruby
 
+install: npm install
+
 services:
     - docker
 
@@ -9,4 +11,7 @@ before_install:
     - docker build -t lincwest/docker-react -f Dockerfile.dev .
 
 script:
-    - docker run lincwest/docker-react npm run test -- --coverage
+    - docker run lincwest/docker-react npm run test
+
+after_success:
+    - coveralls
