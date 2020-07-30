@@ -2,8 +2,6 @@ sudo: required
 services:
     - docker
 
-language: generic
-
 before_install:
     - docker build -t lincwest/docker-react -f Dockerfile.dev .
 
